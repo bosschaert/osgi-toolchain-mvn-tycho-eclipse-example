@@ -13,11 +13,12 @@
  */
 package org.example.osgi.svc.impl;
 
-import org.example.osgi.svc.ServiceOne;
+import org.junit.Assert;
+import org.junit.Test;
 
-class ServiceOneImpl implements ServiceOne {
-    @Override
-    public String myOperation(String arg) {
-        return new StringBuilder(arg).reverse().toString();
-    }
+public class ServiceBundleTest {
+	@Test
+	public void testServiceRegistration() {
+		Assert.fail("moo");
+	}
 }
