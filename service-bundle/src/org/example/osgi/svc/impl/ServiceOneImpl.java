@@ -15,7 +15,7 @@ package org.example.osgi.svc.impl;
 
 import org.example.osgi.svc.ServiceOne;
 
-public class MyServiceImpl implements ServiceOne {
+public class ServiceOneImpl implements ServiceOne {
     @Override
     public String myOperation(String arg) {
         return new StringBuilder(arg).reverse().toString();

@@ -20,7 +20,7 @@ import org.osgi.framework.BundleContext;
 public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext context) throws Exception {
-        context.registerService(ServiceOne.class.getName(), new MyServiceImpl(), null);
+        context.registerService(ServiceOne.class.getName(), new ServiceOneImpl(), null);
     }
 
     @Override
