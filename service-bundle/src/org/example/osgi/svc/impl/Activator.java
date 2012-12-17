@@ -13,14 +13,14 @@
  */
 package org.example.osgi.svc.impl;
 
-import org.example.osgi.api.MyService;
+import org.example.osgi.svc.ServiceOne;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext context) throws Exception {
-        context.registerService(MyService.class.getName(), new MyServiceImpl(), null);
+        context.registerService(ServiceOne.class.getName(), new MyServiceImpl(), null);
     }
 
     @Override

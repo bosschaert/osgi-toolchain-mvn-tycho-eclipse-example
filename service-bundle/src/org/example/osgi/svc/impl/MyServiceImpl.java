@@ -13,11 +13,11 @@
  */
 package org.example.osgi.svc.impl;
 
-import org.example.osgi.api.MyService;
+import org.example.osgi.svc.ServiceOne;
 
-public class MyServiceImpl implements MyService {
+public class MyServiceImpl implements ServiceOne {
     @Override
-    public String doSomething(String arg) {
+    public String myOperation(String arg) {
         return new StringBuilder(arg).reverse().toString();
     }
 }
