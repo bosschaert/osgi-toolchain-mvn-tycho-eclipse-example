@@ -18,12 +18,16 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
+    static BundleContext bundleContext;
+	
     @Override
     public void start(BundleContext context) throws Exception {
-        context.registerService(ServiceOne.class.getName(), new ServiceOneImpl(), null);
+    	bundleContext = context;
+        bundleContext.registerService(ServiceOne.class.getName(), new ServiceOneImpl(), null);
     }
 
     @Override
     public void stop(BundleContext context) throws Exception {
+    	bundleContext = null;
     }
 }

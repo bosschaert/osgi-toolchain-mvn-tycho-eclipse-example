@@ -19,6 +19,7 @@ import org.junit.Test;
 public class ServiceBundleTest {
 	@Test
 	public void testServiceRegistration() {
-		Assert.fail("moo");
+		Assert.assertNotNull(Activator.bundleContext);
+		// Assert.fail("moo");
 	}
 }

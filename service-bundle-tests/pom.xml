@@ -11,5 +11,31 @@
 
   <artifactId>service-bundle-tests</artifactId>
   <packaging>eclipse-test-plugin</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <configuration>
+        <!-- 
+          <testSuite>org.example.osgi.svc.impl</testSuite>
+          <testClass>org.example.osgi.svc.impl.ServiceBundleTest</testClass>
+           -->
+          <!-- 
+          <argLine>-Xmx512m</argLine>
+          <appArgLine>-nl en</appArgLine>
+          -->
+          <bundleStartLevel>
+            <bundle>
+              <id>org.eclipse.equinox.ds</id>
+              <level>1</level>
+              <autoStart>true</autoStart>
+            </bundle>
+          </bundleStartLevel>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 
