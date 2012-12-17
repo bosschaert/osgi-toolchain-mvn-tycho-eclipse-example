@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: service-bundle
+Bundle-Version: 1.0.0.qualifier
+Import-Package: org.example.osgi.api;version="[1.0.0,2.0.0)",
+ org.osgi.framework;version="[1.5.0,2.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
