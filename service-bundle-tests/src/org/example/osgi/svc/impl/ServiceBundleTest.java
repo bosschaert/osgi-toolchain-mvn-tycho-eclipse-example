@@ -13,13 +13,25 @@
  */
 package org.example.osgi.svc.impl;
 
+import org.example.osgi.svc.ServiceOne;
 import org.junit.Assert;
 import org.junit.Test;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
 
 public class ServiceBundleTest {
 	@Test
 	public void testServiceRegistration() {
-		Assert.assertNotNull(Activator.bundleContext);
-		// Assert.fail("moo");
+		// The test is in the same package as the bundle, access package-private member
+		BundleContext ctx = Activator.bundleContext;
+
+		// Check that the service has been registered
+		ServiceReference ref = ctx.getServiceReference(ServiceOne.class.getName());
+		ServiceOne svc = ctx.getService(ref);
+
+		Assert.assertEquals("This service implementation should reverse the input",
+		        "4321", svc.myOperation("1234"));
+
+		Assert.assertTrue(svc instanceof ServiceOneImpl);
 	}
 }
