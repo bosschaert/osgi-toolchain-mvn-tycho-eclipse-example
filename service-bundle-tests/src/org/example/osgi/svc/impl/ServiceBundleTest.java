@@ -20,18 +20,18 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
 public class ServiceBundleTest {
-	@Test
-	public void testServiceRegistration() {
-		// The test is in the same package as the bundle, access package-private member
-		BundleContext ctx = Activator.bundleContext;
+    @Test
+    public void testServiceRegistration() {
+        // The test is in the same package as the bundle, access package-private member
+        BundleContext ctx = Activator.bundleContext;
 
-		// Check that the service has been registered
-		ServiceReference ref = ctx.getServiceReference(ServiceOne.class.getName());
-		ServiceOne svc = ctx.getService(ref);
+        // Check that the service has been registered
+        ServiceReference ref = ctx.getServiceReference(ServiceOne.class.getName());
+        ServiceOne svc = ctx.getService(ref);
 
-		Assert.assertEquals("This service implementation should reverse the input",
-		        "4321", svc.myOperation("1234"));
+        Assert.assertEquals("This service implementation should reverse the input",
+            "4321", svc.myOperation("1234"));
 
-		Assert.assertTrue(svc instanceof ServiceOneImpl);
-	}
+        Assert.assertTrue(svc instanceof ServiceOneImpl);
+    }
 }

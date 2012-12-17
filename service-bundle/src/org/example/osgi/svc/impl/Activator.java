@@ -18,8 +18,9 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
+    // Stored in a static member for testing purposes
     static BundleContext bundleContext;
-	
+
     @Override
     public void start(BundleContext context) throws Exception {
     	bundleContext = context;
