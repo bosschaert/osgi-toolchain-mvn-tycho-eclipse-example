@@ -6,4 +6,5 @@ Bundle-Activator: org.example.osgi.svc.impl.Activator
 Import-Package: org.example.osgi.svc;version="[1.0.0,2.0.0)",
  org.osgi.framework;version="[1.5.0,2.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
 
