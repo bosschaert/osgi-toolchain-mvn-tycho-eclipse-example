@@ -27,7 +27,7 @@ public class ServiceBundleTest {
 
         // Check that the service has been registered
         ServiceReference ref = ctx.getServiceReference(ServiceOne.class.getName());
-        ServiceOne svc = ctx.getService(ref);
+        ServiceOne svc = (ServiceOne) ctx.getService(ref);
 
         Assert.assertEquals("This service implementation should reverse the input",
             "4321", svc.myOperation("1234"));
